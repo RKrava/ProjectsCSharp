@@ -18,24 +18,38 @@ namespace ConsoleApplication1
                 sum += (f(a + h * i) + 4 * f(a + h * (i + 0.5)) + f(a + h * (i + 1)) * h / 6);
             return sum;
         }
+        public static double Chebushev_Method(Function f, double b, double a, int n)
+        {
+            double sum = 0;
+            double adding = (b - a) / n;
+            for (; a <= b; a += adding)
+            {
+                sum += f(a);
+            }
+            return sum * adding;
+        }
 
         public static double SimpsonMethod_For_x(double x)
         {
             return Math.Sqrt(x);
         }
 
+        public static double Chebushev_For_x(double x)
+        {
+            return x;
+        }
+
         static void Main(string[] args)
         {
             Function sim = new Function(SimpsonMethod_For_x);
-            double a, b;
+            Function cheb = new Function(Chebushev_For_x);
+            double a = 0, b = 1;
             int n;
-            Console.Write("Нижняя граница интегрирования. a=");
-            a = Double.Parse(Console.ReadLine());
-            Console.Write("Верхняя граница интегрирования. b=");
-            b = Double.Parse(Console.ReadLine());
+           
             Console.Write("Количество отрезков. n=");
             n = int.Parse(Console.ReadLine());
-            Console.Write("Интеграл = {0}", SimpsonMethod(sim, b, a, n));
+            Console.WriteLine("Интеграл = {0}", SimpsonMethod(sim, b, a, n));
+            Console.WriteLine("Интеграл = {0}", Chebushev_Method(cheb, b, a, n));
             Console.ReadKey();
         }
     }
