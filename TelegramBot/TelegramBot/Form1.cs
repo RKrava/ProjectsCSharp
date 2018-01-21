@@ -56,7 +56,11 @@ namespace TelegramBot
                         {
                             if (message.Text == "/saysomething")
                             {
-                                await Bot.SendTextMessageAsync(message.Chat.Id, "тест",
+                                await Bot.SendTextMessageAsync(message.Chat.Id, "тест");
+                            }
+                            if (message.Text == "/roma")
+                            {
+                                await Bot.SendTextMessageAsync(message.Chat.Id, "Привет, Дима!",
                                        replyToMessageId: message.MessageId);
                             }
                         }
@@ -79,6 +83,11 @@ namespace TelegramBot
             {
                 this.bw.RunWorkerAsync(text);
             }
+        }
+
+        private void txtKey_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,7 +34,7 @@
             // 
             // BtnRun
             // 
-            this.BtnRun.Location = new System.Drawing.Point(123, 84);
+            this.BtnRun.Location = new System.Drawing.Point(156, 75);
             this.BtnRun.Name = "BtnRun";
             this.BtnRun.Size = new System.Drawing.Size(75, 23);
             this.BtnRun.TabIndex = 0;
@@ -44,10 +44,12 @@
             // 
             // txtKey
             // 
-            this.txtKey.Location = new System.Drawing.Point(71, 40);
+            this.txtKey.Location = new System.Drawing.Point(102, 34);
             this.txtKey.Name = "txtKey";
             this.txtKey.Size = new System.Drawing.Size(187, 20);
             this.txtKey.TabIndex = 1;
+            this.txtKey.Text = "534019017:AAELV-mhMoSc0lD6LjdVZCaCk3nifBeQygo";
+            this.txtKey.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
             // 
             // MainForm
             // 
